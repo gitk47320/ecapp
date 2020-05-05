@@ -1,0 +1,8 @@
+%h1 ECサイトダッシュボード
+%p 
+  = link_to '商品一覧', products_path
+%p
+  = link_to 'ログアウト', destroy_user_session_path, method: :delete
+%p 
+  = link_to 'カート', orders_path
+%p  お気に入り

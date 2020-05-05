@@ -1,0 +1,26 @@
+%h1 カート内容
+= link_to 'トップ', root_path
+= link_to '商品一覧', products_path
+
+%h2 合計金額
+カート内の商品合計は#{orders_amount}円です。
+
+%h2 商品詳細
+%table
+  %tr
+    %th 商品名
+    %th 単価
+    %th 品数
+    %th 小計
+  - @orders.each do |order|
+    %tr
+      %td
+        = order.name
+      %td
+        = order.price
+      %td
+        = order.quota
+      %td
+        = order_subtotal(order.price, order.quota)
+      %td
+        = link_to '削除', order_path(order.id), method: :delete

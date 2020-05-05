@@ -1,0 +1,13 @@
+%h1 商品詳細
+%ul
+  %li
+    = @product.name
+  %li
+    = @product.price
+  %li
+    = @product.details
+= form_with model: Order.new, local: true do |f|
+  = f.hidden_field :name, :value => @product.name
+  = f.hidden_field :price, :value => @product.price
+  = f.text_field :quota
+  = f.submit 'カートに入れる'
