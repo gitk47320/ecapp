@@ -21,6 +21,8 @@
       %td
         = order.quota
       %td
-        = order_subtotal(order.price, order.quota)
+        = order_subtotal(order)
       %td
         = link_to '削除', order_path(order.id), method: :delete
+
+= link_to '購入画面へ',purchases_path

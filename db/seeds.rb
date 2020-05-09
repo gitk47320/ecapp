@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 100.times do
 	Product.create(
-		name: Faker::Book.title,
+		name: Faker::Book.unique.title,
 		price: Random.rand(500..3000),
     details: 'いろはにほへとちりぬるを'
 	)
