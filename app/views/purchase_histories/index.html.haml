@@ -1,0 +1,21 @@
+%h1 購入履歴
+= link_to 'トップ', root_path
+= link_to '商品一覧', products_path
+
+%h2 商品詳細
+%table
+  %tr
+    %th 商品名
+    %th 単価
+    %th 品数
+    %th 購入日
+  - @purchasehistories.each do |purchasehistory|
+    %tr
+      %td
+        = purchasehistory.name
+      %td
+        = purchasehistory.price
+      %td
+        = purchasehistory.quota
+      %td
+        = purchasehistory.created_at

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :addresses, only: [:edit, :show, :update, :new, :create]
+  resources :mypages, only: :index
   resources :orders
   resources :purchases
+  resources :purchase_histories
+  resources :mypages
   get 'orders_finishes/show'
   root 'top#index'
   resources :products
