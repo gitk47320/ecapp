@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites
   resources :addresses, only: [:edit, :show, :update, :new, :create]
   resources :mypages, only: :index
   resources :orders

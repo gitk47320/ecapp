@@ -8,8 +8,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.find_or_initialize_by(name: order_params[:name])
     # TODO:以下はorderモデルに切り出す
+    @order = Order.find_or_initialize_by(name: order_params[:name])
     if @order.new_record?
       @order.quota = order_params[:quota]
       @order.price = order_params[:price]
