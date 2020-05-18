@@ -8,17 +8,8 @@ class OrdersController < ApplicationController
   end
 
   def create
-    # TODO:以下はorderモデルに切り出す
-    @order = Order.find_or_initialize_by(name: order_params[:name])
-    if @order.new_record?
-      @order.quota = order_params[:quota]
-      @order.price = order_params[:price]
-      @order.user = current_user
-      @order.save!
-    else
-      @order.update_attributes!(quota: order_params[:quota])
-    end
-    # TODO:ここまで
+    @order = Order.new
+    Order.add_product_to_cart(order_params, current_user)
     redirect_to orders_path
   end
 
