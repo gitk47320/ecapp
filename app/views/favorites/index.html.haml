@@ -1,2 +1,12 @@
-%h1 Favorites#index
-%p Find me in app/views/favorites/index.html.haml
+%h1 お気に入り一覧
+
+%table
+  %tr
+    %th 商品名
+    %th 価格
+  - @favorites.each do |favorite|
+    %tr
+      %td
+        = link_to favorite.name, product_path(favorite.id)
+      %td
+        = favorite.price
