@@ -1,4 +1,7 @@
 = form_with model: @address, local: true do |f|
+  = f.label '郵便番号'
+  = f.text_field :postcode
+  %br
   = f.label '県'
   = f.text_field :prefecture
   %br
@@ -11,5 +14,4 @@
   = f.label 'ビル名・アパート名など'
   = f.text_field :address2
   %br
-  //= f.hidden_field :user_id, :value => current_user.id
-  = f.submit '追加', class: 'btn btn-primary'
+  = f.submit '登録', class: 'btn btn-primary'
